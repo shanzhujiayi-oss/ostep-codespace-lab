@@ -38,3 +38,18 @@ The raw outputs are saved in `data/q2_fifo.txt` and `data/q2_sjf.txt`.
 
 ### Analysis
 SJF performed better for this workload. It ran the 100-second job first, followed by the 200-second job and then the 300-second job. Compared with FIFO, SJF reduced all three average metrics by 100 seconds.
+## Q3: Round-Robin and Time Quantum
+
+**Prediction:** I predict that a smaller time quantum will improve response time, while a larger time quantum will reduce average turnaround time and waiting time for this workload.
+
+**Reasoning:** Round-Robin (RR) gives each job a limited amount of CPU time before switching to the next job. A smaller quantum allows jobs to get their first CPU time sooner, but it causes more context switches. A larger quantum reduces switching frequency and makes RR behave more like FIFO.
+
+**Verified Results:**
+
+| Time Quantum | Average Response Time | Average Turnaround Time | Average Waiting Time | Total Time |
+|---|---:|---:|---:|---:|
+| 1 | 1 | 599 | 399 | 600 |
+| 10 | 10 | 590 | 390 | 600 |
+| 100 | 100 | 500 | 300 | 600 |
+
+**Analysis:** For three jobs of equal length (200 each), the total time remained 600 for all three quantum values. As the quantum increased from 1 to 100, average response time increased from 1 to 100, while average turnaround time decreased from 599 to 500 and average waiting time decreased from 399 to 300. This shows that a smaller quantum improves initial responsiveness, while a larger quantum reduces waiting and turnaround times for this particular workload. These results may differ when jobs have different lengths.

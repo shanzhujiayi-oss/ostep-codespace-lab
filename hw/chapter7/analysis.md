@@ -63,3 +63,29 @@ SJF delivers the same turnaround times as FIFO when all jobs have the same lengt
 **Answer:**
 
 SJF and RR can deliver the same response times when all jobs have the same length and the RR time quantum is equal to the length of each job. In this case, each job can finish in one time slice, so both scheduling algorithms give the same response times.
+
+### Q6. What happens to response time with SJF as job lengths increase?
+
+**Prediction:**
+
+I predict that average response time will increase as job lengths increase when all jobs have the same length.
+
+**Reasoning:**
+
+SJF runs the shortest job first. When all jobs have the same length, the jobs run in their original order. Each later job must wait for the previous jobs to finish before receiving CPU time. Therefore, increasing the job lengths increases the response time of later jobs.
+
+**Verified Results:**
+
+The simulator outputs are saved in:
+- `data/q6_sjf_20.txt`
+- `data/q6_sjf_40.txt`
+- `data/q6_sjf_60.txt`
+
+For three equal-length jobs, the expected average response times are:
+- Job length 20: average response time = 20
+- Job length 40: average response time = 40
+- Job length 60: average response time = 60
+
+**Analysis:**
+
+The results demonstrate that average response time increases as job lengths increase. When all jobs have the same length, the first job starts immediately, while later jobs wait for earlier jobs to finish. Longer jobs therefore cause longer waits for the jobs behind them.

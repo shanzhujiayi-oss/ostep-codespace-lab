@@ -53,3 +53,8 @@ SJF performed better for this workload. It ran the 100-second job first, followe
 | 100 | 100 | 500 | 300 | 600 |
 
 **Analysis:** For three jobs of equal length (200 each), the total time remained 600 for all three quantum values. As the quantum increased from 1 to 100, average response time increased from 1 to 100, while average turnaround time decreased from 599 to 500 and average waiting time decreased from 399 to 300. This shows that a smaller quantum improves initial responsiveness, while a larger quantum reduces waiting and turnaround times for this particular workload. These results may differ when jobs have different lengths.
+### Q4. For what types of workloads does SJF deliver the same turnaround times as FIFO?
+
+**Answer:**
+
+SJF delivers the same turnaround times as FIFO when all jobs have the same length. In this case, both scheduling algorithms process the jobs in the same order, so the turnaround times are identical.

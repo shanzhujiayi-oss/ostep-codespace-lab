@@ -89,3 +89,22 @@ For three equal-length jobs, the expected average response times are:
 **Analysis:**
 
 The results demonstrate that average response time increases as job lengths increase. When all jobs have the same length, the first job starts immediately, while later jobs wait for earlier jobs to finish. Longer jobs therefore cause longer waits for the jobs behind them.
+### Q7. Convoy Effect
+
+**Prediction:**
+
+I predict that the convoy effect causes short jobs to wait longer when a long job runs first.
+
+**Reasoning:**
+
+The convoy effect occurs when short jobs wait behind a long job. Under FIFO scheduling, jobs run in arrival order, so a short job cannot run until the jobs before it finish.
+
+**Verified Results:**
+
+For job lengths 100, 200, and 300, FIFO runs the jobs in that order. Their response times are 0, 100, and 300, respectively. The average response time is:
+
+Average response time = (0 + 100 + 300) / 3 = 133.33
+
+**Analysis:**
+
+The results show that jobs arriving later must wait for earlier jobs to finish. When a long job is first, short jobs can experience long waiting times. SJF can reduce this problem by running shorter jobs first.

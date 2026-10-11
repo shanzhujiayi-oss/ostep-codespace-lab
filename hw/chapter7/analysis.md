@@ -58,3 +58,8 @@ SJF performed better for this workload. It ran the 100-second job first, followe
 **Answer:**
 
 SJF delivers the same turnaround times as FIFO when all jobs have the same length. In this case, both scheduling algorithms process the jobs in the same order, so the turnaround times are identical.
+### Q5. For what types of workloads and quantum lengths does SJF deliver the same response times as RR?
+
+**Answer:**
+
+SJF and RR can deliver the same response times when all jobs have the same length and the RR time quantum is equal to the length of each job. In this case, each job can finish in one time slice, so both scheduling algorithms give the same response times.
